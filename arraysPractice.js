@@ -149,23 +149,34 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   //Code Here
 function removeItem(list, itemToRemove){
-  for(var i = 0; i < list.length; i++){
-    if(list[i] === itemToRemove){
-      console.log('deleted ' + itemToRemove);
-      list.splice(i, 1);
+  var newArray = [];
+  if(typeof(list) === 'object' && list.length > 0){
+    for(var i = 0; i < list.length; i++){
+      if(list[i] !== itemToRemove){
+        newArray.push(list[i]);
+      }
     }
   }
-  return list;
+  return newArray;
 }
+// function removeItem(list, itemToRemove){
+//   for(var i = list.length; i >= 0; i--){
+//     if(list[i] === itemToRemove){
+//       list.splice(i, 1);
+//     }
+//   }
+//   return list;
+// }
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
 
 
 //Next Problem
-function addItem(list, itemToAdd){
-  list.push(itemToAdd);
-  return list;
+function addItem(array, itemToAdd){
+  var returnArray = [];
+  returnArray.push(itemToAdd);
+  return returnArray;
 }
 
 
